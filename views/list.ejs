@@ -1,0 +1,30 @@
+<!--include header.ejs template -->
+<%- include("header")-%>
+  <!-- have to add scriplet tag around CONTROL FLOW javascript only inside html doc line by line basis -->
+  <!-- <%if(whatDay === "Saturday" || whatDay === "Sunday"){%>
+  <h1 style="color:purple">Its a <%= whatDay%> !</h1>
+  <%}else{%>
+  <h1 style="color:red">Its a <%= whatDay%> !</h1>
+  <%}%> -->
+
+  <div class="box" id="heading">
+    <h1><%= whatDay%></h1>
+  </div>
+
+  <div class="box">
+
+    <%for(var i = 0; i < newListItems.length; i++){%>
+    <div class="item">
+      <input type="checkbox" name="" value="">
+      <p><%=newListItems[i]%></p>
+    </div>
+    <%}%>
+
+    <form class="" action="/" method="post">
+      <input type="text" name="toDoList" value="" placeholder="New Item" autocomplete="off">
+      <!-- "<%= whatDay%>" returns Work List while <%= whatDay%> returns Work -->
+      <button type="submit" name="list" value=<%= whatDay%>>+</button>
+    </form>
+  </div>
+<!-- footer template check footer.ejs -->
+<%- include("footer")-%>
